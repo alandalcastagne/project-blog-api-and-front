@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+
+  <div class="internalGrid">
+    <div class="left">
+      <a class="nav-link button-new-post" [routerLink]="['/register-post']">New Post</a>
+      <div class="categoryBox">
+        <form #categoryId="ngForm" (ngSubmit)="onClickSubmit(categoryId.value)">
+          <input type="text" name="category" placeholder="Category" ngModel>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="right">   
+      <div class="postList">
+        <div class="postListSinglePost" *ngFor="let post of posts">
+          <h2 class="clickable" (click)="sendIdToApi($event)" [routerLink]="['/edit-post']" id="{{post.id}}">{{ post.title }}</h2>
+          <p innerHtml="{{ post.description | slice: 0:500}}"></p>
+          <div class="categorie-and-date">
+            <p><b>Category:</b> {{ post.categorie }}</p>
+            <p><b>Date release/update:</b> {{ post.date }}</p>
+          </div>
+          <div class="postListSinglePostActions">
+            <button (click)="sendIdToApi($event)" [routerLink]="['/edit-post']" id="{{post.id}}">Update</button>
+            <button name="deletePostButton" value="{{post.id}}" (click)="deletePost($event)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+
+</html>

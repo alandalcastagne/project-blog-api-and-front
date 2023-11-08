@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+
+  <div class="internalGrid">
+    <div class="left">
+      <h3>Select</h3>
+      <div class="categoryBox">
+
+        <form #categoryId="ngForm" (ngSubmit)="onClickSubmit(categoryId.value)">
+          <select name="categoryFK" ngModel>
+            <option *ngFor="let categorie of categories" value="{{categorie.id}}"> {{ categorie.name }} </option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    
+  <div class="right">
+    <div class="postList">
+      <div class="postListSinglePost" *ngFor="let post of posts">
+        <h2 class="clickable" (click)="sendIdToApi($event)" [routerLink]="['/read-post']" id="{{post.id}}">{{ post.title }}</h2>
+        <p innerHtml="{{ post.description | slice: 0:500}}"></p>
+        <div class="categorie-and-date">
+          <p><b>Category:</b> {{ post.categorie }}</p>
+          <p><b>Date release/update:</b> {{ post.date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+</body>
+</html>

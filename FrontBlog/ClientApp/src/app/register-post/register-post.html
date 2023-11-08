@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+  <div class="boxPostData">
+    <form #postId="ngForm" (ngSubmit)="onClickSubmit(postId.value)">
+      <h3>Title</h3>
+      <input type="text" name="title" placeholder="Title" ngModel />
+      <h3>Description</h3>
+      <textarea name="description" ngModel></textarea>
+      <h3>Category</h3>
+      <select name="categoryFK" ngModel>
+        <option *ngFor="let categorie of categories" value="{{categorie.id}}"> {{ categorie.name }} </option>
+      </select>
+      <button class="button-submit-new-post" type="submit">Submit</button>
+    </form>
+  </div>
+
+ 
+</body>
+</html>

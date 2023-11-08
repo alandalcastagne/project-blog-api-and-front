@@ -1,0 +1,64 @@
+
+/* Edit and Create post*/
+
+.boxPostData {
+  background: #9EADC8;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.boxPostData input, .boxPostData textarea{
+    width: 100%;
+}
+
+.boxPostData textarea{
+    min-height: 500px;
+}
+
+  .boxPostData .button-submit-new-post {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #B9E28C;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+
+  .boxPostData .button-submit-edit-post {
+    background: #B9E28C;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+
+
+
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #57B8FF;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}

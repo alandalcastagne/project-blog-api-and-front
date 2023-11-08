@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <div class="loginBox">
+    <h1>Project Blog</h1>
+    <form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value)">
+      <input required type="text" name="login" placeholder="Login" ngModel>
+      <input required type="password" name="password" placeholder="Password" ngModel />
+      <button type="submit">LOGIN</button>
+    </form>
+  </div>
+</body>
+</html>

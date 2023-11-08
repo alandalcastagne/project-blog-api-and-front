@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+
+  <div class="boxPostData">
+    <form #postId="ngForm" (ngSubmit)="onClickSubmit(postId.value)">
+      <h3>Title</h3>
+      <input type="text" name="title" placeholder="Title" value="{{post?.title}}" ngModel />
+      <h3>
+        Description
+      </h3>
+      <textarea name="description" value="{{post?.description}}" ngModel></textarea>
+      <br />
+
+      <button class="button-submit-edit-post" type="submit">Submit</button>
+    </form>
+    </div>
+
+</body>
+</html>
